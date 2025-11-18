@@ -2,18 +2,19 @@
 export default function LIForm(){
   const sayHello = async () => {
     try{
+      event.preventDefault();
       const res = await fetch("http://localhost:5000/hello");
       const data = await res.json();
-      console.log(data);
+      console.log(data.message);
     } catch (err) {
-      console.error(err);
+      console.log(err);
     }
   }
 
   return(
     <div>
       <p>Maybe this time it'll work...?</p>
-      <form>
+      <form onsubmit="return false;">
         <label for = "username">Enter username here pls :3</label> <br />
         <input type="text" />
         <button onClick = {sayHello} type="submit">Submit here brochado</button> <br />

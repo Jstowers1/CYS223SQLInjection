@@ -9,7 +9,7 @@ CORS(app)
 def get_current_time():
     return {'time': time.time()}
 
-@app.route('/hello', methods=['GET'])
+@app.route('/hello')
 def hello():
     print("Hello world!")
     return jsonify({"message": "hello world!"})
