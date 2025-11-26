@@ -1,16 +1,14 @@
-# React + Vite
+# CYS223 SQL Injection Demo
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project uses React, Flask, and MariaDB to showcase how SQL injection can be used and how to prevent against it. 
+This was designed and showcased as a CYS223, Cybersecurity Principles and Foundations, final project
 
-Currently, two official plugins are available:
+PLEASE NOTE: This is only a single piece of a greater presentation! 
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Front-End Implementation
+The visual design is implemented by utilizing React. There are no packages or imported elements to help the implementation of React.
+There are two different main pages, insec.jsx and sec.jsx, with each representing a form vulnerable to SQL injection and one that isn't.
 
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Back-End Implementation
+The back-end scripting is implemented by utilizing Python through Flask. Why? I just wanted to do something new.
+The Database used in this proejct is MariaDB. It's hosted locally and only works on localhost. Sorry to the nobody who's looking at pulling this project. 
