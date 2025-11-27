@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 
 
-export default function LIForm(){
+export default function LIFormSec(){
   const [formData, setFormData] = useState({name: '', email: '', password: ''})
   const [message, setMessage]   = useState('');
 
@@ -12,7 +12,7 @@ export default function LIForm(){
   const handleSubmit = async (e) => {
     e.preventDefault();
     try{
-      const response = await fetch('http://localhost:5000/submitInsec', {
+      const response = await fetch('http://localhost:5000/submitSec', {
         method: 'POST',
         headers: {
           'Content-Type':'application/json',
@@ -41,12 +41,12 @@ export default function LIForm(){
 */
   return(
     <div>
-      <h4>A form vulnerable to SQL Injection</h4>
+      <h4>A form NOT vulnerable to SQL Injection</h4>
       <form onSubmit={handleSubmit}>
         <div>
           <label for = "name">NAME</label> <br />
           <input type="text" name="name" value={formData.name} onChange={handleChange}/>
-          <p> Wow... since I'm an insecure form I REALLY hope nobody enters SQL Injection into the name field... especially not a command like a', 'dummy@user.com', 'pwd') UNION SELECT (SELECT password FROM users WHERE userID = 1), 2, 3 #, which will create a new account with the username being the password of the user ID passed...</p>
+          <p> Wow... since I'm a secure form it doesn't matter what kind of weird data gets put into me!</p>
         </div>
         <div>
           <label for = "email">EMAIL</label> <br />
@@ -58,7 +58,7 @@ export default function LIForm(){
         </div>
         <button type="submit">SUBMIT</button> <br />
       </form>
-      {message && <p>{message}</p>}
+      {message && <p> Server Response: **{message}**</p>}
     </div>
   )
 }
